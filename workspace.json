@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "events": "apps/events",
+    "events-e2e": "apps/events-e2e",
     "routes": "apps/routes",
     "routes-e2e": "apps/routes-e2e"
   }
