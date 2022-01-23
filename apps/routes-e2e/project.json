@@ -1,0 +1,28 @@
+{
+  "root": "apps/routes-e2e",
+  "sourceRoot": "apps/routes-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/routes-e2e/cypress.json",
+        "devServerTarget": "routes:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "routes:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/routes-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["routes"]
+}

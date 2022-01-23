@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "routes": "apps/routes",
+    "routes-e2e": "apps/routes-e2e"
+  }
+}
