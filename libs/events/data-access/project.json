@@ -1,0 +1,23 @@
+{
+  "root": "libs/events/data-access",
+  "sourceRoot": "libs/events/data-access/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/events/data-access/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/events/data-access"],
+      "options": {
+        "jestConfig": "libs/events/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
