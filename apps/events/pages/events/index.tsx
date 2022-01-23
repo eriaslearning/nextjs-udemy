@@ -1,5 +1,3 @@
-import './index.module.css';
-
 /* eslint-disable-next-line */
 export interface EventsProps {}
 
