@@ -2,14 +2,14 @@ import './EventsUi.module.css';
 
 /* eslint-disable-next-line */
 export interface EventsUiProps {
-  items: any,
+  items?: any,
 }
 
 export function EventsUi(props: EventsUiProps) {
   const { items } = props;
   return (
     <ul>
-      {items.map((item: any) => )}
+      {items.map((item: any) => <li></li>)}
     </ul>
   );
 }
