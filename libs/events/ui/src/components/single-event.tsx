@@ -5,9 +5,9 @@ export interface SingleEventProps {}
 
 export function SingleEvent(props: SingleEventProps) {
   return (
-    <div>
-      <h1>Welcome to SingleEvent!</h1>
-    </div>
+    <li>
+      
+    </li>
   );
 }
 
