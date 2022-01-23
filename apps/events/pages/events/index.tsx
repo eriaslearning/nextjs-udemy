@@ -6,7 +6,7 @@ export interface EventsProps {}
 export function Events(props: EventsProps) {
   return (
     <div>
-      <h1>Welcome to Events!</h1>
+      <h1>All Events</h1>
     </div>
   );
 }
