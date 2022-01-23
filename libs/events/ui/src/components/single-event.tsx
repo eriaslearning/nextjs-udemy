@@ -1,4 +1,5 @@
 import './single-event.module.css';
+import Link from 'next/link';
 
 /* eslint-disable-next-line */
 export interface SingleEventProps {}
@@ -17,6 +18,7 @@ export function SingleEvent(props: SingleEventProps) {
         <div>
           <address>ADDRESS</address>
         </div>
+        <Link href="/">Explore Event</Link>
       </div>
     </li>
   );
