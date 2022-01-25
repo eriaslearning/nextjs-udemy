@@ -5,7 +5,7 @@ import Link from 'next/link';
 export interface SingleEventProps {
   id: string;
   title: string;
-  image: typeof Image;
+  image: string;
   date: string;
   location: string;
 }
@@ -21,9 +21,11 @@ export function SingleEvent(props: SingleEventProps) {
 
   const formattedAddress: string = location.replace(', ', '\n');
 
+  const exploreLink = `/events/${id}`;
+
   return (
     <li>
-      <img src="" alt="" />
+      <img src={'/' + image} alt={title} />
       <div>
         <div>
           <h2>{title}</h2>
@@ -34,7 +36,7 @@ export function SingleEvent(props: SingleEventProps) {
         <div>
           <address>{formattedAddress}</address>
         </div>
-        <Link href="/">Explore Event</Link>
+        <Link href={exploreLink}>Explore Event</Link>
       </div>
     </li>
   );
