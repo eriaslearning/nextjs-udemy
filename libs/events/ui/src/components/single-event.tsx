@@ -1,4 +1,4 @@
-import './single-event.module.css';
+import styles from './single-event.module.css';
 import Link from 'next/link';
 
 /* eslint-disable-next-line */
@@ -24,21 +24,25 @@ export function SingleEvent(props: SingleEventProps) {
   const exploreLink = `/events/${id}`;
 
   return (
-    <li>
-      <img src={'/' + image} alt={title} />
-      <div>
-        <div>
-          <h2>{title}</h2>
+    <div className={styles['container']}>
+      <li className={styles['item']}>
+        <img src={'/' + image} alt={title} />
+        <div className={styles['content']}>
+          <div className={styles['summary']}>
+            <h2>{title}</h2>
+          </div>
+          <div className={styles['date']}>
+            <time>{humanReadableDate}</time>
+          </div>
+          <div className={styles['address']}>
+            <address>{formattedAddress}</address>
+          </div>
+          <div className={styles['actions']}>
+            <Link href={exploreLink}>Explore Event</Link>
+          </div>
         </div>
-        <div>
-          <time>{humanReadableDate}</time>
-        </div>
-        <div>
-          <address>{formattedAddress}</address>
-        </div>
-        <Link href={exploreLink}>Explore Event</Link>
-      </div>
-    </li>
+      </li>
+    </div>
   );
 }
 
