@@ -1,4 +1,4 @@
-import './EventsUi.module.css';
+import styles from './EventsUi.module.css';
 import SingleEvent from '../components/single-event';
 
 /* eslint-disable-next-line */
@@ -9,7 +9,7 @@ export interface EventsUiProps {
 export function EventsUi(props: EventsUiProps) {
   const { items } = props;
   return (
-    <ul>
+    <ul className={styles['list']}>
       {items.map((item: any) => (
         <SingleEvent
           key={item.id}
