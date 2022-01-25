@@ -7,7 +7,7 @@ export interface SingleEventProps {
   title: string;
   image: typeof Image;
   date: string;
-  location: Location;
+  location: string;
 }
 
 export function SingleEvent(props: SingleEventProps) {
@@ -18,6 +18,8 @@ export function SingleEvent(props: SingleEventProps) {
     month: 'long',
     year: 'numeric',
   });
+
+  const formattedAddress: string = location.replace(', ', '\n');
 
   return (
     <li>
@@ -30,7 +32,7 @@ export function SingleEvent(props: SingleEventProps) {
           <time>{humanReadableDate}</time>
         </div>
         <div>
-          <address>ADDRESS</address>
+          <address>{formattedAddress}</address>
         </div>
         <Link href="/">Explore Event</Link>
       </div>
