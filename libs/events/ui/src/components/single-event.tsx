@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import DateIcon from './icons/date-icon';
 import ArrowRightIcon from './icons/arrow-right-icon';
-import AddressIcon from './icons/date-icon';
+import AddressIcon from './icons/address-icon';
 
 /* eslint-disable-next-line */
 export interface SingleEventProps {
