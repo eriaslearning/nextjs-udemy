@@ -1,18 +1,33 @@
 import styles from './index.module.css';
+import path from 'path';
+import fs from 'fs/promises';
 
-export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
+export interface IndexProps {
+  products?: any,
+}
+
+export function Index(props: IndexProps) {
+  const { products } = props;
   return (
     <ul>
-      <li>Product 1</li>
-      <li>Product 2</li>
-      <li>Product 3</li>
+      {products.map((product: any) =>
+        <li key={product.id}>{product.title}</li>
+      )}
     </ul>
   );
+}
+
+export async function getStaticProps() {
+  // cwd is the root directory
+  const filePath = path.join(process.cwd(), 'apps', 'ssr', 'data', 'dummy.json');
+  const jsonData: any = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
+  return {
+    props: {
+      products: data.products,
+    },
+  };
 }
 
 export default Index;
