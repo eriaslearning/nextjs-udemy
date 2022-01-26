@@ -1,11 +1,13 @@
+import { getAllEvents } from '../../public/dummy-data';
+import { EventsUi } from '@tests/events/ui'
+
 /* eslint-disable-next-line */
 export interface EventsProps {}
 
 export function Events(props: EventsProps) {
+  const allEvents = getAllEvents();
   return (
-    <div>
-      <h1>All Events</h1>
-    </div>
+    <EventsUi items={allEvents} />
   );
 }
 
