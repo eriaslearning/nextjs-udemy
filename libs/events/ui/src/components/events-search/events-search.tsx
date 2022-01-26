@@ -1,12 +1,24 @@
+import { useRef } from 'react';
+
 import styles from './events-search.module.css';
 
 /* eslint-disable-next-line */
-export interface EventsSearchProps {}
+export interface EventsSearchProps {
+  onSearch: any,
+}
+
 
 export function EventsSearch(props: EventsSearchProps) {
+  const yearInputRef: any = useRef();
+  const monthInputRef: any = useRef();
+
   function submitHandler(e: any) {
     e.preventDefault();
-    console.log('erias');
+
+    const selectedYear = yearInputRef.current.value;
+    const selectedMonth = monthInputRef.current.value;
+
+    props.onSearch(selectedYear, selectedMonth);
   }
 
   return (
@@ -14,7 +26,7 @@ export function EventsSearch(props: EventsSearchProps) {
       <div className={styles['controls']}>
         <div className={styles['control']}>
           <label htmlFor="year">Year</label>
-          <select id="year">
+          <select id="year" ref={yearInputRef}>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
           </select>
@@ -23,7 +35,7 @@ export function EventsSearch(props: EventsSearchProps) {
       <div className={styles['controls']}>
         <div className={styles['control']}>
           <label htmlFor="month">Month</label>
-          <select id="month">
+          <select id="month" ref={monthInputRef}>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
