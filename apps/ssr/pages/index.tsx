@@ -18,6 +18,7 @@ export function Index(props: IndexProps) {
 }
 
 export async function getStaticProps() {
+  console.log('(Re)-Generating...');
   // cwd is the root directory
   const filePath = path.join(process.cwd(), 'apps', 'ssr', 'data', 'dummy.json');
   const jsonData: any = await fs.readFile(filePath);
@@ -27,6 +28,7 @@ export async function getStaticProps() {
     props: {
       products: data.products,
     },
+    revalidate: 30
   };
 }
 
