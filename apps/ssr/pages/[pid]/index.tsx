@@ -8,6 +8,10 @@ export interface ProductDetailPageProps {
 
 function ProductDetailPage(props: ProductDetailPageProps) {
   const { loadedProduct } = props;
+
+  if(!loadedProduct) {
+      return <h1></h1>
+  }
   return (
     <Fragment>
       <h1>{loadedProduct.title}</h1>
@@ -41,6 +45,14 @@ export async function getStaticProps(context: any) {
     (product: any) => product.id === productId
   );
 
+  if (!data) {
+      return <h1>Loading...</h1>
+  }
+
+  if (!product) {
+      return { notFound: true }
+  }
+
   return {
     props: {
       loadedProduct: product,
@@ -55,7 +67,7 @@ export async function getStaticPaths() {
 
   return {
     paths: pathsWithParams,
-    fallback: false,
+    fallback: true,
   };
 }
 
