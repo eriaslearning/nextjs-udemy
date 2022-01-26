@@ -1,7 +1,15 @@
 {
   "version": 2,
   "projects": {
+    "event-detail-ui": "libs/event-detail/ui",
+    "events": "apps/events",
+    "events-data-access": "libs/events/data-access",
+    "events-e2e": "apps/events-e2e",
+    "events-ui": "libs/events/ui",
+    "layout-ui": "libs/layout/ui",
     "routes": "apps/routes",
-    "routes-e2e": "apps/routes-e2e"
+    "routes-e2e": "apps/routes-e2e",
+    "ssr": "apps/ssr",
+    "ssr-e2e": "apps/ssr-e2e"
   }
 }

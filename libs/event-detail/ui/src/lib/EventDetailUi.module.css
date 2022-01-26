@@ -1,0 +1,46 @@
+.root {
+  /* width: 40rem; */
+  margin: -5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-25%, -50%);
+  margin-top: 1rem;
+}
+
+.image {
+  display: flex;
+  max-width: 80%;
+  max-height: auto;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.icon {
+  margin-left: 0.5rem;
+  transform: translateY(0.2rem);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media screen and (min-width: 756) {
+  .root {
+    /* width: 40rem; */
+    margin: -2rem;
+    left: 50%;
+    top: 0;
+    transform: translate(-25%, 20%);
+    margin-top: -10rem;
+  }
+}

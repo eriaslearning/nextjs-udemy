@@ -1,0 +1,23 @@
+{
+  "root": "libs/events/ui",
+  "sourceRoot": "libs/events/ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/events/ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/events/ui"],
+      "options": {
+        "jestConfig": "libs/events/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
