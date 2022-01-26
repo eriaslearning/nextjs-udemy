@@ -15,9 +15,10 @@ export function EventsSearch(props: EventsSearchProps) {
           </select>
         </div>
       </div>
-      <div className={styles['control']}>
-        <label htmlFor="month">Month</label>
-        <select id="month">
+      <div className={styles['controls']}>
+        <div className={styles['control']}>
+          <label htmlFor="month">Month</label>
+          <select id="month">
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -30,8 +31,10 @@ export function EventsSearch(props: EventsSearchProps) {
             <option value="10">October</option>
             <option value="11">November</option>
             <option value="12">December</option>
-        </select>
+          </select>
+        </div>
       </div>
+
       <button>Search</button>
     </form>
   );
