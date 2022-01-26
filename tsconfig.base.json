@@ -17,7 +17,8 @@
     "paths": {
       "@tests/event-detail/ui": ["libs/event-detail/ui/src/index.ts"],
       "@tests/events/data-access": ["libs/events/data-access/src/index.ts"],
-      "@tests/events/ui": ["libs/events/ui/src/index.ts"]
+      "@tests/events/ui": ["libs/events/ui/src/index.ts"],
+      "@tests/layout/ui": ["libs/layout/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
