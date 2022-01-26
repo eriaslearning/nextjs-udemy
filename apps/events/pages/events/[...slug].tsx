@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router';
 import { getFilteredEvents } from '../../public/dummy-data';
 import { EventsUi } from '@tests/events/ui';
+import { ResultsTitle } from '@tests/events/ui';
+import { Fragment } from 'react';
+import Link from 'next/link';
 
 /* eslint-disable-next-line */
 export interface SlugProps {}
@@ -30,7 +33,12 @@ export function FilteredEventsPage(props: SlugProps) {
     numMonth < 1
   ) {
     return (
-      <h1 className="center">Invalid filter, please adjust your values</h1>
+      <Fragment>
+        <h1 className="center">Invalid Filter, pleaser adjust the paramter</h1>
+        <div className="center">
+          <Link href="/events">Show All Events</Link>
+        </div>
+      </Fragment>
     );
   }
 
@@ -40,13 +48,23 @@ export function FilteredEventsPage(props: SlugProps) {
   });
 
   if (!filteredEvents || filteredEvents.length === 0) {
-    return(
-      <h1 className="center">No events found</h1>
-    )
+    return (
+      <Fragment>
+        <h1 className="center">No events found</h1>
+        <div className="center">
+          <Link href="/events">Show All Events</Link>
+        </div>
+      </Fragment>
+    );
   }
+  const date: Date = new Date(numYear, numMonth - 1);
+  console.log(date);
 
   return (
-    <EventsUi items={filteredEvents} />
+    <Fragment>
+      <ResultsTitle date={date} />
+      <EventsUi items={filteredEvents} />
+    </Fragment>
   );
 }
 
