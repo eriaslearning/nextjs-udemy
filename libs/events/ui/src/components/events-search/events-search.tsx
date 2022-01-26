@@ -4,8 +4,13 @@ import styles from './events-search.module.css';
 export interface EventsSearchProps {}
 
 export function EventsSearch(props: EventsSearchProps) {
+  function submitHandler(e: any) {
+    e.preventDefault();
+    console.log('erias');
+  }
+
   return (
-    <form className={styles['form']}>
+    <form className={styles['form']} onSubmit={submitHandler}>
       <div className={styles['controls']}>
         <div className={styles['control']}>
           <label htmlFor="year">Year</label>
