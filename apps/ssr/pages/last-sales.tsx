@@ -16,7 +16,7 @@ export function LastSales(props: LastSalesProps) {
     'https://nextjs-course-erias-default-rtdb.europe-west1.firebasedatabase.app/sales.json',
     (url) => fetch(url).then((res: any) => res.json())
   );
-  console.log(data);
+//   console.log(data);
 
   // Rerun every time data updates
   useEffect(() => {
@@ -33,7 +33,7 @@ export function LastSales(props: LastSalesProps) {
       }
 
       setSalesState(transformedSales);
-      console.log(transformedSales)
+    //   console.log(transformedSales)
     }
   }, [data]);
 
