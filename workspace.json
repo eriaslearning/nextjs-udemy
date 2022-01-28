@@ -9,6 +9,8 @@
     "layout-ui": "libs/layout/ui",
     "routes": "apps/routes",
     "routes-e2e": "apps/routes-e2e",
+    "section6": "apps/section6",
+    "section6-e2e": "apps/section6-e2e",
     "ssr": "apps/ssr",
     "ssr-e2e": "apps/ssr-e2e"
   }
