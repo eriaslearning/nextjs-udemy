@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface LastSalesProps {}
+export interface LastSalesProps {
+  sales: any;
+}
 
 export function LastSales(props: LastSalesProps) {
-  const [salesState, setSalesState] = useState(undefined);
-  const [isLoading, setIsLoading] = useState(false);
+  const { sales } = props;
+  const [salesState, setSalesState] = useState(sales);
+  //   const [isLoading, setIsLoading] = useState(false);
 
   //   const { data, error } = useSWR(
   //     'https://nextjs-course-erias-default-rtdb.europe-west1.firebasedatabase.app/sales.json'
@@ -16,7 +19,7 @@ export function LastSales(props: LastSalesProps) {
     'https://nextjs-course-erias-default-rtdb.europe-west1.firebasedatabase.app/sales.json',
     (url) => fetch(url).then((res: any) => res.json())
   );
-//   console.log(data);
+  //   console.log(data);
 
   // Rerun every time data updates
   useEffect(() => {
@@ -33,7 +36,7 @@ export function LastSales(props: LastSalesProps) {
       }
 
       setSalesState(transformedSales);
-    //   console.log(transformedSales)
+      //   console.log(transformedSales)
     }
   }, [data]);
 
@@ -63,7 +66,7 @@ export function LastSales(props: LastSalesProps) {
     return <h1>Failed to load</h1>;
   }
 
-  if (!data || !salesState) {
+  if (!data && !salesState) {
     return <h1>No data</h1>;
   }
 
@@ -80,6 +83,30 @@ export function LastSales(props: LastSalesProps) {
       ))}
     </ul>
   );
+}
+
+export async function getStaticProps() {
+  return fetch(
+    'https://nextjs-course-erias-default-rtdb.europe-west1.firebasedatabase.app/sales.json'
+  )
+    .then((response: any) => response.json())
+    .then((data: any) => {
+      const transformedSales = [];
+
+      // Transform from an object into an array
+      for (const key in data) {
+        transformedSales.push({
+          id: key,
+          username: data[key].username,
+          volume: data[key].volume,
+        });
+      }
+
+      return {
+        props: { sales: transformedSales },
+        revalidate: 10,
+      };
+    });
 }
 
 export default LastSales;
