@@ -7,7 +7,7 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <>
+    <div>
       <h1>erias Form</h1>
       <form>
         <div>
@@ -18,8 +18,9 @@ export function Index() {
           <label htmlFor="feedback">Your Feedback</label>
           <textarea id="feedback"></textarea>
         </div>
+        <button>Send Feedback</button>
       </form>
-    </>
+    </div>
   );
 }
 
