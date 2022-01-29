@@ -6,6 +6,8 @@
     "events-data-access": "libs/events/data-access",
     "events-e2e": "apps/events-e2e",
     "events-ui": "libs/events/ui",
+    "events-v2": "apps/events-v2",
+    "events-v2-e2e": "apps/events-v2-e2e",
     "layout-ui": "libs/layout/ui",
     "routes": "apps/routes",
     "routes-e2e": "apps/routes-e2e",
