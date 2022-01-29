@@ -1,0 +1,28 @@
+{
+  "root": "apps/api-test-e2e",
+  "sourceRoot": "apps/api-test-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/api-test-e2e/cypress.json",
+        "devServerTarget": "api-test:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "api-test:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/api-test-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["api-test"]
+}

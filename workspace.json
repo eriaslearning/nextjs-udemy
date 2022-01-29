@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "api-test": "apps/api-test",
+    "api-test-e2e": "apps/api-test-e2e",
     "event-detail-ui": "libs/event-detail/ui",
     "events": "apps/events",
     "events-data-access": "libs/events/data-access",
