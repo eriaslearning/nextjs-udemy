@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "api-test": "apps/api-test",
+    "api-test-e2e": "apps/api-test-e2e",
     "event-detail-ui": "libs/event-detail/ui",
     "events": "apps/events",
     "events-data-access": "libs/events/data-access",
@@ -8,6 +10,8 @@
     "events-ui": "libs/events/ui",
     "events-v2": "apps/events-v2",
     "events-v2-e2e": "apps/events-v2-e2e",
+    "events-v3": "apps/events-v3",
+    "events-v3-e2e": "apps/events-v3-e2e",
     "layout-ui": "libs/layout/ui",
     "routes": "apps/routes",
     "routes-e2e": "apps/routes-e2e",
