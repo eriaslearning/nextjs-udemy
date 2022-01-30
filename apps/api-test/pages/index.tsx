@@ -3,13 +3,26 @@ import { useRef } from 'react';
 import styles from './index.module.css';
 
 export function Index() {
-  const emailInputRef = useRef();
-  const feedbackInputRef = useRef();
+  const emailInputRef = useRef<any>();
+  const feedbackInputRef = useRef<any>();
 
   function submitFormHandler(event) {
     event.preventDefault();
 
-    
+    const enteredEmail = emailInputRef.current.value;
+    const enteredFeedback = feedbackInputRef.current.value;
+
+    const reqBody = { email: enteredEmail, text: enteredFeedback };
+
+    fetch('/api/feedback', {
+      method: 'POST',
+      body: JSON.stringify(reqBody),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((response: any) =>
+      response.json().then((data: any) => console.log(data))
+    );
   }
 
   return (
