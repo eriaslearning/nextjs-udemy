@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import styles from './index.module.css';
 
 export function Index() {
+  const [feedbackItems, setFeedbackItems] = useState<any>();
   const emailInputRef = useRef<any>();
   const feedbackInputRef = useRef<any>();
 
@@ -25,6 +26,14 @@ export function Index() {
     );
   }
 
+  function loadFeedbackHandler() {
+    fetch('/api/feedback').then((response: any) =>
+      response.json().then((data: any) => {
+        setFeedbackItems(data.feedback);
+      })
+    );
+  }
+
   return (
     <div>
       <h1>erias Form</h1>
@@ -39,6 +48,16 @@ export function Index() {
         </div>
         <button>Send Feedback</button>
       </form>
+      <hr />
+      <button onClick={loadFeedbackHandler}>View Feedback</button>
+      <ul>
+        {feedbackItems?.map((item: any) => (
+          <>
+            <li key={item.id}>{item.feedbackText}</li>
+            <h1 key={item.email}>{item.email}</h1>
+          </>
+        ))}
+      </ul>
     </div>
   );
 }
