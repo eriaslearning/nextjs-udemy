@@ -41,7 +41,8 @@ async function handler(req, res) {
       !text ||
       text.trim() === ''
     ) {
-      res.status(422).json({ message: 'Invalid imput' });
+      res.status(422).json({ message: 'Invalid input' });
+      client.close();
       return;
     }
 
