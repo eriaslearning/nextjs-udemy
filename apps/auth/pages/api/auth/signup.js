@@ -1,6 +1,7 @@
 import { connectToDatabase } from '../../../lib/db';
 import { hashPassword } from '../../../lib/auth';
 import { hash } from 'br';
+import { ObjectId } from 'mongodb';
 
 async function handler(req, res) {
   const data = req.body;
@@ -26,6 +27,7 @@ async function handler(req, res) {
   const hashedPassword = await hashPassword(password);
 
   db.collection('users').insertOne({
+    _id: new ObjectId(),
     email: email,
     password: hashedPassword,
   });
