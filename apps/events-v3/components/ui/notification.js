@@ -19,7 +19,7 @@ function Notification(props) {
   }
 
   if (status === 'pending') {
-    statusClasses = classes.pending;
+    statusClasses = classes.pending;    
   }
 
   const activeClasses = `${classes.notification} ${statusClasses}`;
