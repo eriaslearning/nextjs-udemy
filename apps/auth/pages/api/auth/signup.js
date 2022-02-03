@@ -3,6 +3,8 @@ import { hashPassword } from '../../../lib/auth';
 import { hash } from 'br';
 import { ObjectId } from 'mongodb';
 
+// Needs to have error handling
+
 async function handler(req, res) {
   const data = req.body;
   const { email, password } = data;
