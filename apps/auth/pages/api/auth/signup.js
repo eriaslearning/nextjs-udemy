@@ -6,6 +6,10 @@ import { ObjectId } from 'mongodb';
 // Needs to have error handling
 
 async function handler(req, res) {
+  if (req.method !== 'POST') {
+    res.status(404).json({ message: 'Only POST requests are allowed' });
+    return;
+  }
   const data = req.body;
   const { email, password } = data;
 
