@@ -1,15 +1,12 @@
-import Head from 'next/head';
-import './styles.css';
-function CustomApp({ Component, pageProps }) {
+import Layout from '../components/layout/layout';
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Welcome to auth!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
-export default CustomApp;
+
+export default MyApp;
