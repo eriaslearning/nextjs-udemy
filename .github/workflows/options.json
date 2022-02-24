@@ -10,7 +10,6 @@
   "rules": [
     {
       "trigger": "commit",
-      "branch": "hotfix",
       "bump": "build"
     },
     {
