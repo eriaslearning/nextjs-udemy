@@ -1,0 +1,33 @@
+{
+  "scheme": "semantic",
+  
+  // file where the current version can be found
+  "versionFile": "./package.json", 
+  "files": [
+    {
+      "path": "./package.json" // path to file containing version to be updated
+      "line": 3 // optional line number if needed
+    }
+  ],
+  "rules": [
+    {
+      "trigger": "commit",
+      "branch": "hotfix",
+      "bump": "build"
+    },
+    {
+      "trigger": "commit",
+      "bump": "minor",
+      "branch": "master",
+      "reset": "build"
+    },
+    {
+      "trigger": "commit",
+      "bump": "major",
+      "branch": "release",
+      "reset": [
+        "minor",
+        "build"
+      ]
+    }
+  ]}
