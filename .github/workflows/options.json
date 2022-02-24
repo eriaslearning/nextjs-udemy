@@ -1,12 +1,11 @@
 {
   "scheme": "semantic",
   
-  // file where the current version can be found
   "versionFile": "./package.json", 
   "files": [
     {
-      "path": "./package.json" // path to file containing version to be updated
-      "line": 3 // optional line number if needed
+      "path": "./package.json"
+      "line": 3
     }
   ],
   "rules": [
