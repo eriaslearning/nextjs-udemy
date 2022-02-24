@@ -1,15 +1,17 @@
-name: Manage versions
-on: [push]
+name: "tagged-release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
 jobs:
-  bump:
-    runs-on: ubuntu-latest
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
     steps:
-      - uses: actions/checkout@v2      
-      - uses: actions/setup-node@v1
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          node-version: '12'      
-      - name: Version Bumper
-        uses: michmich112/version-bumper@v1.0.1
-        with:
-          options-file: "./.github/workflows/options.json"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
