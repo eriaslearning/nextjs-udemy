@@ -3,7 +3,7 @@
   "versionFile": "./package.json", 
   "files": [
     {
-      "path": "./package.json"
+      "path": "./package.json",
       "line": 3
     }
   ],
