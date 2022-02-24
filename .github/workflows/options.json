@@ -1,6 +1,5 @@
 {
   "scheme": "semantic",
-  
   "versionFile": "./package.json", 
   "files": [
     {
